@@ -1,29 +1,46 @@
 import Link from "next/link";
-import { FC, useState } from "react";
+import { FC, useState, useEffect } from "react";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import { useWalletNfts, NftTokenAccount } from "@nfteyez/sol-rayz-react";
+import Unity, { UnityContext } from "react-unity-webgl";
+//import useSWR from "swr";
+import { fetcher } from "utils/fetcher";
+//import { UnityEvent } from "react-unity-webgl";
 // import { useConnection } from "@solana/wallet-adapter-react";
 
+
+
 import { Loader, SolanaLogo, SelectAndConnectWalletButton } from "components";
-import { NftCard } from "./NftCard";
+//import { NftCard } from "./NftCard";
 import styles from "./index.module.css";
-const walletPublicKey = "3EqUrFrjgABCWAnqMYjZ36GcktiwDtFdkNYwY6C6cDzy";
+import { publicKey } from "@project-serum/anchor/dist/cjs/utils";
+//const walletPublicKey = publicKey;
+
+const unityContext = new UnityContext({
+  loaderUrl: "buildUnity/myunityapp.loader.js",
+  dataUrl: "buildUnity/myunityapp.data",
+  frameworkUrl: "buildUnity/myunityapp.framework.js",
+  codeUrl: "buildUnity/myunityapp.wasm",
+});
+
+
 
 export const GalleryView: FC = ({}) => {
   // const { connection } = useConnection();
-  const [walletToParsePublicKey, setWalletToParsePublicKey] =
-    useState<string>(walletPublicKey);
+  //const [walletToParsePublicKey, setWalletToParsePublicKey] =
+    //useState<string>(walletPublicKey);
+    //useState<String>(publicKey);
   const { publicKey } = useWallet();
 
   const { nfts, isLoading, error } = useWalletNfts({
-    publicAddress: walletToParsePublicKey,
+    publicAddress: publicKey,
     // connection,
   });
 
-  console.log("nfts", nfts);
+  //console.log("nfts", nfts);
 
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  /* const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     setWalletToParsePublicKey(value.trim());
   };
@@ -32,15 +49,77 @@ export const GalleryView: FC = ({}) => {
     if (publicKey) {
       setWalletToParsePublicKey(publicKey?.toBase58());
     }
-  };
+  }; */
 
+  
+
+  /* const onBtnClick = () => {
+    //e.preventDefault()
+    unityContext.send(
+      "nftInputObject",
+      "ReactToUnityMethod",
+      JSON.stringify({
+        "foo": "bar",
+      }),
+    )
+  } */
+
+  //const [isLoaded, setIsLoaded] = useState(false);
+
+  
+  //Button to send NFT uri to Unity
+  const sendNFTData=()=> {
+    
+    for (var x in nfts){
+      var myUri = nfts[x].data.uri;
+    
+    //console.log("myUri: ",myUri);
+    
+    //sends uri data to populate list in Unity
+    unityContext.send("NftCanvasObject", "addNftToList", myUri);
+    
+    }
+    
+    //call loadNFTS function in unity
+    unityContext.send("NftCanvasObject", "loadNfts");
+    
+    
+  };
+  
+  
+
+  
+
+  /* useEffect(function () {
+    unityContext.on("loaded", function () {
+      
+      setIsLoaded(true);
+      console.log("loaded!");
+      
+      
+      
+      
+    });
+  }, []); */
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(function () {
+    unityContext.on("loaded", function () {
+      setIsLoaded(true);
+      console.log("loaded = true");
+    });
+  }, []);
+  
+  
+  
   return (
-    <div className="container mx-auto max-w-6xl p-8 2xl:px-0">
+    
+    
       <div className={styles.container}>
         <div className="navbar mb-2 shadow-lg bg-neutral text-neutral-content rounded-box">
           <div className="flex-none">
             <button className="btn btn-square btn-ghost">
-              <span className="text-4xl">🏞</span>
+              <span className="text-4xl"><img src="/newlogo.png"/></span>
             </button>
           </div>
           <div className="flex-1 px-2 mx-2">
@@ -48,7 +127,7 @@ export const GalleryView: FC = ({}) => {
               <ul className="text-xl">
                 <li>
                   <Link href="/">
-                    <a>Templates</a>
+                    <a>Home</a>
                   </Link>
                 </li>
                 <li>
@@ -60,104 +139,35 @@ export const GalleryView: FC = ({}) => {
           <div className="flex-none">
             <WalletMultiButton className="btn btn-ghost" />
           </div>
+          
         </div>
+        <div className="flex-1 px-6 mx-2">
+          
 
-        <div className="text-center pt-2">
-          <div className="hero min-h-16 p-0 pt-10">
-            <div className="text-center hero-content w-full">
-              <div className="w-full">
-                <h1 className="mb-5 text-5xl">
-                  NFT Gallery on Solana <SolanaLogo />
-                </h1>
-
-                <div className="w-full min-w-full">
-                  <p className="mb-5">
-                    Here is very basic example of NFT Gallery. It parses
-                    mainnet. <br />
-                    And uses{" "}
-                    <a
-                      href="https://www.npmjs.com/package/@nfteyez/sol-rayz-react"
-                      target="_blank"
-                      className="link font-bold"
-                      rel="noreferrer"
-                    >
-                      @nfteyez/sol-rayz-react
-                    </a>{" "}
-                    package to fetch NFTs for specific wallet.
-                  </p>
-                  <div>
-                    <div className="form-control mt-8">
-                      <label className="input-group input-group-vertical input-group-lg">
-                        <span>Search</span>
-                        <div className="flex space-x-2">
-                          <input
-                            type="text"
-                            placeholder="Enter Wallet Address"
-                            className="w-full input input-bordered input-lg"
-                            value={walletToParsePublicKey}
-                            onChange={onChange}
-                            style={{
-                              borderRadius:
-                                "0 0 var(--rounded-btn,.5rem) var(--rounded-btn,.5rem)",
-                            }}
-                          />
-
-                          <SelectAndConnectWalletButton
-                            onUseWalletClick={onUseWalletClick}
-                          />
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <div className="my-10">
-                  {error ? (
-                    <div>
-                      <h1>Error Occures</h1>
-                      {(error as any)?.message}
-                    </div>
-                  ) : null}
-
-                  {!error && isLoading ? (
-                    <div>
-                      <Loader />
-                    </div>
-                  ) : (
-                    <NftList nfts={nfts} error={error} />
-                  )}
-                </div>
-              </div>
-            </div>
+           {publicKey ? <Unity style={{ visibility: isLoaded ? "visible" : "hidden" , width:"100%",height:"100%"}}
+                unityContext={unityContext} matchWebGLToCanvasSize={true} 
+                
+                
+          /> : <div className="alert">
+          <div className="flex-1">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#2196f3" className="w-6 h-6 mx-2">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>                          
+            </svg> 
+            <label>Please login to your wallet to view your NFT gallery!</label>
           </div>
-        </div>
+        </div>} 
+          
+        {setTimeout(() => {
+      {sendNFTData()}
+    }, 1000)}    
+          
+            
+           
       </div>
+       
     </div>
+     
   );
-};
 
-type NftListProps = {
-  nfts: NftTokenAccount[];
-  error?: Error;
-};
-
-const NftList = ({ nfts, error }: NftListProps) => {
-  if (error) {
-    return null;
-  }
-
-  if (!nfts?.length) {
-    return (
-      <div className="text-center text-2xl pt-16">
-        No NFTs found in this wallet
-      </div>
-    );
-  }
-
-  return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 items-start">
-      {nfts?.map((nft) => (
-        <NftCard key={nft.mint} details={nft} onSelect={() => {}} />
-      ))}
-    </div>
-  );
+ 
 };

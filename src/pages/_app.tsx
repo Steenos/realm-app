@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { ConnectionProvider } from "@solana/wallet-adapter-react";
 import { clusterApiUrl } from "@solana/web3.js";
 import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
+//import Unity, { UnityContext } from "react-unity-webgl";
 
 import "tailwindcss/tailwind.css";
 import "../styles/globals.css";

@@ -62,3 +62,4 @@ export const NftCard: FC<Props> = ({
     </div>
   );
 };
+ 
