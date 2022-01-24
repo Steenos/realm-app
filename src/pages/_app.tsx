@@ -10,6 +10,7 @@ import "tailwindcss/tailwind.css";
 import "../styles/globals.css";
 import "../styles/App.css";
 
+
 // const SOLANA_NETWORK = WalletAdapterNetwork.Mainnet;
 const SOLANA_NETWORK = WalletAdapterNetwork.Devnet;
 const network = SOLANA_NETWORK;

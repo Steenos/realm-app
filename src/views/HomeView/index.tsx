@@ -11,6 +11,8 @@ import { Loader, SolanaLogo, SelectAndConnectWalletButton } from "components";
 
 import styles from "./index.module.css";
 
+var cors = require('cors');
+
 
 
 export const HomeView: FC = ({}) => {
@@ -35,7 +37,7 @@ export const HomeView: FC = ({}) => {
    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     setWalletToParsePublicKey(value.trim());
-    console.log(walletToParsePublicKey);
+    //console.log(walletToParsePublicKey);
   };
 
   /* const onUseWalletClick = () => {
