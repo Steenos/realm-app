@@ -3,19 +3,24 @@ import { FC, useState, useEffect } from "react";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import { useWalletNfts, NftTokenAccount } from "@nfteyez/sol-rayz-react";
+//import { walletToParsePublicKey} from "views/HomeView";
+import { HomeView } from "views";
 import Unity, { UnityContext } from "react-unity-webgl";
 //import useSWR from "swr";
 import { fetcher } from "utils/fetcher";
 //import { UnityEvent } from "react-unity-webgl";
 // import { useConnection } from "@solana/wallet-adapter-react";
 
-
+//import {walletPublicKey} from "views/HomeView";
 
 import { Loader, SolanaLogo, SelectAndConnectWalletButton } from "components";
 //import { NftCard } from "./NftCard";
 import styles from "./index.module.css";
-import { publicKey } from "@project-serum/anchor/dist/cjs/utils";
+import { publicKey} from "@project-serum/anchor/dist/cjs/utils";
 //const walletPublicKey = publicKey;
+
+import { useRouter } from "next/router"
+
 
 const unityContext = new UnityContext({
   loaderUrl: "buildUnity/myunityapp.loader.js",
@@ -24,32 +29,41 @@ const unityContext = new UnityContext({
   codeUrl: "buildUnity/myunityapp.wasm",
 });
 
-
+//const walletPublicKey = "";
 
 export const GalleryView: FC = ({}) => {
+
+  const router = useRouter()
+  const {
+    query : {walletToParsePublicKey},
+  } = router
   // const { connection } = useConnection();
   //const [walletToParsePublicKey, setWalletToParsePublicKey] =
     //useState<string>(walletPublicKey);
     //useState<String>(publicKey);
-  const { publicKey } = useWallet();
 
-  const { nfts, isLoading, error } = useWalletNfts({
-    publicAddress: publicKey,
-    // connection,
-  });
+  /* const [walletToParsePublicKey, setWalletToParsePublicKey] =
+  useState<string>(walletPublicKey); */
+   
+
+  //const { walletToParsePublicKey } = useWallet();
+    console.log("wallet address: ", router.query);
+   const { nfts, isLoading, error } = useWalletNfts({
+    publicAddress: router.query.walletToParsePublicKey
+  }); 
 
   //console.log("nfts", nfts);
 
-  /* const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+/*     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     setWalletToParsePublicKey(value.trim());
-  };
+  }; */
 
-  const onUseWalletClick = () => {
+/*   const onUseWalletClick = () => {
     if (publicKey) {
       setWalletToParsePublicKey(publicKey?.toBase58());
     }
-  }; */
+  };   */
 
   
 
@@ -137,10 +151,12 @@ export const GalleryView: FC = ({}) => {
             </div>
           </div>
           <div className="flex-none">
-            <WalletMultiButton className="btn btn-ghost" />
+           {/*  <WalletMultiButton className="btn btn-ghost" /> */}
           </div>
           
         </div>
+
+       
         <div className="flex-1 px-6 mx-2">
           
 

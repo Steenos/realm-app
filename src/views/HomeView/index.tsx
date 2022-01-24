@@ -1,15 +1,48 @@
 import Link from "next/link";
-import { FC } from "react";
+import { FC, useState } from "react";
+//import {Link} from 'react-router';
 import { useWallet } from "@solana/wallet-adapter-react";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 
-import { SolanaLogo } from "components";
+import { useWalletNfts, NftTokenAccount } from "@nfteyez/sol-rayz-react";
+import { Loader, SolanaLogo, SelectAndConnectWalletButton } from "components";
+
+//import { SolanaLogo } from "components";
+
 import styles from "./index.module.css";
 
+
+
 export const HomeView: FC = ({}) => {
-  const { publicKey } = useWallet();
+
+  const walletPublicKey = "";
+  
 
   //const onClick = () => {};
+   const [walletToParsePublicKey, setWalletToParsePublicKey] =
+    useState<string>(walletPublicKey); 
+  
+  //const { walletPublicKey } = useWallet();
+
+
+  const { nfts, isLoading, error } = useWalletNfts({
+    publicAddress: walletToParsePublicKey,
+    // connection,
+  }); 
+
+  //console.log("nfts", nfts);
+
+   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    setWalletToParsePublicKey(value.trim());
+    console.log(walletToParsePublicKey);
+  };
+
+  /* const onUseWalletClick = () => {
+    if (publicKey) {
+      setWalletToParsePublicKey(publicKey?.toBase58());
+    }
+  };  */
 
   return (
     
@@ -49,7 +82,7 @@ export const HomeView: FC = ({}) => {
 
 
           <div className="flex-none">
-            <WalletMultiButton className="btn btn-secondary" />
+           {/*  <WalletMultiButton className="btn btn-secondary" /> */}
             </div>
           </div>
        {/*  <div className="hero min-h-fit bg-base-200">
@@ -76,20 +109,57 @@ export const HomeView: FC = ({}) => {
       Jump into your NFT Gallery
           </h1> 
       <p className="mb-5">
-            Login to your <SolanaLogo/> wallet to get started.
+            Enter a <SolanaLogo/> wallet address to get started.
           </p> 
-          {publicKey ? <button className="btn glass"><Link href="/gallery">
+
+          <div>
+                    <div className="form-control mt-8">
+                      <label className="input-group input-group-vertical input-group-lg">
+                        <span>Search</span>
+                        <div className="flex space-x-2">
+                          <input
+                            type="text"
+                            placeholder="Enter Wallet Address"
+                            className="w-full input input-bordered input-lg"
+                            value={walletToParsePublicKey}
+                            onChange={onChange}
+                            style={{
+                              borderRadius:
+                                "0 0 var(--rounded-btn,.5rem) var(--rounded-btn,.5rem)",
+                            }}
+                          />
+
+                          
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+          {!error ? <button className="btn glass"><Link href={{
+        pathname: "/gallery",
+        query: {walletToParsePublicKey},
+      }}>
                   <a className="text-lg font-bold hover:underline">
                     Enter Gallery
                   </a>
                 </Link></button>: <button className="btn btn-ghost">
                   <a className="text-lg font-bold hover:underline">
-                    Connect Wallet to enter
+                    Enter a valid address
                   </a></button>}
                   
     </div>
   </div>
 </div>
+{/* <div className="my-10">
+                  {error ? (
+                    <div>
+                      <h1>Error Occures</h1>
+                      {(error as any)?.message}
+                    </div>
+                  ) : null}
+
+                  
+                </div> */}
+              </div>
 
   
 
@@ -166,7 +236,7 @@ export const HomeView: FC = ({}) => {
           </div>
         </div> */}
       </div>
-    </div>
+    
     
   );
 };
