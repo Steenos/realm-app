@@ -11,7 +11,7 @@ import { Loader, SolanaLogo, SelectAndConnectWalletButton } from "components";
 
 import styles from "./index.module.css";
 
-var cors = require('cors');
+
 
 
 
