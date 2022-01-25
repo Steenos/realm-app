@@ -3,7 +3,7 @@ import { FC, useState } from "react";
 //import {Link} from 'react-router';
 import { useWallet } from "@solana/wallet-adapter-react";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
-
+import { useConnection } from "@solana/wallet-adapter-react";
 import { useWalletNfts, NftTokenAccount } from "@nfteyez/sol-rayz-react";
 import { Loader, SolanaLogo, SelectAndConnectWalletButton } from "components";
 
@@ -17,6 +17,7 @@ import styles from "./index.module.css";
 
 export const HomeView: FC = ({}) => {
 
+  const { connection } = useConnection();
   const walletPublicKey = "";
   
 
@@ -28,7 +29,7 @@ export const HomeView: FC = ({}) => {
 
 
   const { nfts, isLoading, error } = useWalletNfts({
-    publicAddress: walletToParsePublicKey,
+    publicAddress: walletToParsePublicKey, connection
     // connection,
   }); 
 
