@@ -3,6 +3,7 @@ import { FC, useState, useEffect } from "react";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import { useWalletNfts, NftTokenAccount } from "@nfteyez/sol-rayz-react";
+import { useConnection } from "@solana/wallet-adapter-react";
 //import { walletToParsePublicKey} from "views/HomeView";
 import { HomeView } from "views";
 import Unity, { UnityContext } from "react-unity-webgl";
@@ -34,7 +35,8 @@ const unityContext = new UnityContext({
 
 
 export const GalleryView: FC = ({}) => {
-
+  const { connection } = useConnection();
+  
   const router = useRouter()
   const {
     query : {myValue},
@@ -53,7 +55,7 @@ export const GalleryView: FC = ({}) => {
   //const { walletToParsePublicKey } = useWallet();
     console.log("wallet address: ", router.query);
    const { nfts, isLoading, error } = useWalletNfts({
-    publicAddress: router.query.walletToParsePublicKey
+    publicAddress: router.query.walletToParsePublicKey, connection
   }); 
 
   //console.log("nfts", nfts);
