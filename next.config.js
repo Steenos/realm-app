@@ -55,7 +55,7 @@ const nextConfig = {
   },
 };
 
-/* module.exports = {
+const header = {
   async headers() {
     return [
       {
@@ -69,8 +69,9 @@ const nextConfig = {
         ]
       }
     ]
-  }
-}; */
+  },
+  //withPlugins(plugins, nextConfig)
+}; 
 
 
-module.exports = withPlugins(plugins, nextConfig);
+module.exports = withPlugins(plugins, nextConfig, header);

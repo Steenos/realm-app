@@ -10,7 +10,7 @@ import { Loader, SolanaLogo, SelectAndConnectWalletButton } from "components";
 //import { SolanaLogo } from "components";
 
 import styles from "./index.module.css";
-
+import { useRouter } from "next/router";
 
 
 
@@ -35,7 +35,8 @@ export const HomeView: FC = ({}) => {
   //console.log("nfts", nfts);
 
    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
+    const {value} = e.target;
+    
     setWalletToParsePublicKey(value.trim());
     //console.log(walletToParsePublicKey);
   };
@@ -242,3 +243,6 @@ export const HomeView: FC = ({}) => {
     
   );
 };
+
+
+
