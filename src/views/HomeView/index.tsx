@@ -10,7 +10,7 @@ import { Loader, SolanaLogo, SelectAndConnectWalletButton } from "components";
 //import { SolanaLogo } from "components";
 
 import styles from "./index.module.css";
-import { useRouter } from "next/router";
+
 
 
 
