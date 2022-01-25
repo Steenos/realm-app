@@ -31,12 +31,14 @@ const unityContext = new UnityContext({
 });
 
 //const walletPublicKey = "";
-const router = useRouter()
+
+
+export const GalleryView: FC = ({}) => {
+
+  const router = useRouter()
   const {
     query : {myValue},
   } = router
-
-export const GalleryView: FC = ({}) => {
 
   
   // const { connection } = useConnection();
