@@ -16,7 +16,7 @@ const SOLANA_NETWORK = WalletAdapterNetwork.Devnet;
 const network = SOLANA_NETWORK;
 
 // set custom RPC server endpoint for the final website
-// const endpoint = "https://explorer-api.devnet.solana.com";
+//const endpoint = "https://explorer-api.devnet.solana.com";
 const endpoint = "https://ssc-dao.genesysgo.net/";
 
 const WalletProvider = dynamic(
@@ -27,7 +27,7 @@ const WalletProvider = dynamic(
 );
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const endpoint = useMemo(() => clusterApiUrl(network), []);
+  //const endpoint = useMemo(() => clusterApiUrl(network), []);
 
   return (
     <ConnectionProvider endpoint={endpoint}>
