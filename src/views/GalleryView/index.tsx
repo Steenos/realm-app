@@ -19,7 +19,8 @@ import styles from "./index.module.css";
 import { publicKey} from "@project-serum/anchor/dist/cjs/utils";
 //const walletPublicKey = publicKey;
 
-import { useRouter } from "next/router"
+
+import { useRouter } from "next/router";
 
 
 const unityContext = new UnityContext({
@@ -30,13 +31,14 @@ const unityContext = new UnityContext({
 });
 
 //const walletPublicKey = "";
+const router = useRouter()
+  const {
+    query : {myValue},
+  } = router
 
 export const GalleryView: FC = ({}) => {
 
-  const router = useRouter()
-  const {
-    query : {walletToParsePublicKey},
-  } = router
+  
   // const { connection } = useConnection();
   //const [walletToParsePublicKey, setWalletToParsePublicKey] =
     //useState<string>(walletPublicKey);
