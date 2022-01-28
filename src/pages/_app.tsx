@@ -32,11 +32,17 @@ function MyApp({ Component, pageProps }: AppProps) {
   const endpoint = "https://ssc-dao.genesysgo.net/";
 
   return (
-    <ConnectionProvider endpoint={endpoint}>
-      <WalletProvider>
-        <Component {...pageProps} />
-      </WalletProvider>
-    </ConnectionProvider>
+    <div className="min-h-screen">
+      <div className="bg-gradient-to-br from-gray-700 via-gray-900 to-black h-screen">
+        <ConnectionProvider endpoint={endpoint}>
+          <WalletProvider>
+            <Component {...pageProps} />
+          </WalletProvider>
+        </ConnectionProvider>
+      
+      </div>
+    
+    </div>
   );
 }
 

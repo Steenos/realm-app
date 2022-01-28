@@ -51,44 +51,52 @@ export const HomeView: FC = ({}) => {
   return (
     
     
-    <div className="container mx-auto max-w-6xl p-8 2xl:px-0">
-      <div className={styles.container}>
-        <div className="navbar mb-2 shadow-lg bg-neutral text-neutral-content rounded-box">
-          <div className="flex-none">
-            <button className="btn btn-square btn-ghost">
-              <span className="text-4xl"><img src="/newlogo.png"/></span>
-            </button>
+    //<div className="container mx-auto max-w-6xl p-8 2xl:px-0">
+    <div className={styles.container}>
+       {/*  <header className="fixed flex w-full justify-between items-center"> */}
+     {/*  <nav className="px-2 sm:px-4 py-2.5 rounded "> */}
+  <div className="py-16 h-full">
+  <nav className="fixed p-5 top-0 flex w-full flex-wrap justify-between items-center mx-auto right-0 left-0
+  bg-white  bg-transparent backdrop-filter backdrop-blur-lg">
+  <a href="#" className="flex">
+  <img src={"/trans-glow-logo.png"} alt="logo" className="w-16 cursor-pointer"/>
+    
+      <span className="self-center text-5xl font-bold whitespace-nowrap dark:text-white ">Art Realms</span>
+  </a>
+  {/* <div className="flex md:order-2">
+      <button type="button" className=" hidden text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get started</button>
+      <button data-collapse-toggle="mobile-menu-4" type="button" className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-4" aria-expanded="false">
+      <span className="sr-only">Open main menu</span>
+      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+      <svg className="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+    </button>
+  </div> */}
+  <div className="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="mobile-menu-4">
+    <ul className="hidden flex flex-col text-3xl mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-xlg md:font-medium">
+      <li>
+        <a href="#" className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">Mission</a>
+      </li>
+      <li>
+        <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Roadmap</a>
+      </li>
+      <li>
+        <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Team</a>
+      </li>
+    </ul>
+  </div>
+  </nav>
+  </div>
+{/* </nav> */}
+{/* </header> */}
+        {/* <nav className="w-full flex md:justify-center justify-between items-center p-4">
+          <div className="md:flex-[0.5] flex-initial justify-center items-center ">
+            <img src={"/trans-glow-logo.png"} alt="logo" className="w-32 cursor-pointer"/>
+            <h1>Art Realms</h1>
           </div>
-
-          <div className="flex-3 px-6 mx-2">
-            <span className="text-lg font-bold">Realms</span>
+          <div className="flex-1 px-2 mx-2">
+          
           </div>
-
-          {/* <div className="flex-3 px-6 mx-0">
-            <li className="mb-0">
-            <Link href="/gallery">
-                  <a className="text-lg font-bold hover:underline">
-                    NFT Gallery
-                  </a>
-                </Link>
-                </li>
-          </div> */}
-
-          <div className="flex-3 px-6 mx-0">
-          <div data-tip="coming soon" className="tooltip">
-            <span className="text-lg font-bold">Roadmap</span>
-            </div>
-          </div>
-
-          <div className="flex-1 px-6 mx-0">
-            <span className="text-lg font-bold">About Us</span>
-          </div>
-
-
-          <div className="flex-none">
-           {/*  <WalletMultiButton className="btn btn-secondary" /> */}
-            </div>
-          </div>
+        </nav> */}
        {/*  <div className="hero min-h-fit bg-base-200">
         
           <div className="flex-col hero-content lg:flex-row-reverse">
@@ -105,40 +113,30 @@ export const HomeView: FC = ({}) => {
           </div>
         </div> */}
 
-<div className="hero min-h-screen rounded-box" style={{backgroundImage: `url(/hero-img.png)`}}>
-  <div className="hero-overlay bg-opacity-40 rounded-box"></div> 
-  <div className="text-center hero-content text-neutral-content">
-    <div className="max-w-md">
-      <h1 className="mb-5 text-5xl font-bold">
-      Jump into your NFT Gallery
-          </h1> 
-      <p className="mb-5">
-            Enter a <SolanaLogo/> wallet address to get started.
-          </p> 
-
-          <div>
-                    <div className="form-control mt-8">
+        <div className="flex w-full py-8">
+          <div className="flex md:flex-row flex-col">
+          <div className="flex-auto flex-row space-x-8 px-8"><img src="/isoview5.png" className="w-full"/></div>
+            <div className="flex flex-auto flex-col md:mr-10">
+              <h1 className = "text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-white to-blue-400">Make your Own NFT Gallery</h1>
+              <p className="text-white">Create high-quality 3D exhibitions of your NFTs and share it with your friends. Getting started is as easy as searching your Solana wallet address.</p>
+              <div className="form-control mt-8">
                       <label className="input-group input-group-vertical input-group-lg">
-                        <span>Search</span>
+                      
                         <div className="flex space-x-2">
                           <input
                             type="text"
-                            placeholder="Enter Wallet Address"
-                            className="w-full input input-bordered input-lg"
+                            placeholder="Enter a Solana Wallet Address.."
+                            className="w-full input text-gray-400 rounded-none input-lg bg-gray-800 bg-opacity-40"
                             value={walletToParsePublicKey}
                             onChange={onChange}
                             style={{
-                              borderRadius:
-                                "0 0 var(--rounded-btn,.5rem) var(--rounded-btn,.5rem)",
+                              
                             }}
                           />
 
                           
                         </div>
-                      </label>
-                    </div>
-                  </div>
-          {!error ? <button className="btn glass"><Link href={{
+                        {!error ? <button className="btn glass"><Link href={{
         pathname: "/gallery",
         query: {walletToParsePublicKey},
       }}>
@@ -146,99 +144,31 @@ export const HomeView: FC = ({}) => {
                     Enter Gallery
                   </a>
                 </Link></button>: <button className="btn btn-ghost">
-                  <a className="text-lg font-bold hover:underline">
-                    Enter a valid address
+                  <a className="text-lg text-gray-500 font-bold hover:underline">
+                    Enter the Metaverse
                   </a></button>}
-                  
-    </div>
-  </div>
-</div>
-{/* <div className="my-10">
-                  {error ? (
-                    <div>
-                      <h1>Error Occures</h1>
-                      {(error as any)?.message}
+                      </label>
                     </div>
-                  ) : null}
+            </div>
+           
+          </div>
+        </div>
 
-                  
-                </div> */}
-              </div>
+
 
   
 
-       <footer className="p-10 footer bg-neutral text-neutral-content rounded-box">
+       <footer className="p-10 h-fit footer bg-neutral justify-left text-neutral-content text-gray-200">
   <div>
     
     <p>Built by @0xSteen and @crazysetting
       
     </p>
+    <p>twitter.com/_realms_</p>
   </div> 
-  <div>
-    <span className="footer-title">Social</span> 
-    <div className="grid grid-flow-col gap-4">
-      <a>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current">
-          <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-        </svg>
-      </a> 
-      <a>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current">
-          <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-        </svg>
-      </a> 
-      <a>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current">
-          <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-        </svg>
-      </a>
-    </div>
-  </div>
+  
 </footer> 
 
-
-
-
-        
-
-        {/* <div className="text-center pt-2">
-          <div className="hero min-h-16 py-4">
-            <div className="text-center hero-content">
-              <div className="max-w-lg">
-                
-                <h1 className="mb-5 text-5xl font-bold">
-                  Hello Solana <SolanaLogo /> World!
-                </h1>
-                <p className="mb-5">
-                  Show off your awesome NFT collection in this #D gallery
-                </p>
-                <p className="mb-5">
-                  Sollana wallet adapter is connected and ready to use.
-                </p>
-                <p>
-                  {publicKey ? <>Your address: {publicKey.toBase58()}</> : null}
-                </p>
-
-                
-              </div>
-            </div>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <h1 className="mb-5 pb-8 text-5xl">Templates:</h1>
-            <ul className="text-left leading-10">
-              <li className="mb-5">
-                <Link href="/gallery">
-                  <a className="text-4xl font-bold hover:underline">
-                    🏞 -- NFT Gallery
-                  </a>
-                </Link>
-              </li>
-              
-              
-            </ul>
-          </div>
-        </div> */}
       </div>
     
     

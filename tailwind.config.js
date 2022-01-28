@@ -11,6 +11,10 @@ module.exports = {
       // serif: ['Merriweather', 'serif'],
     },
     extend: {
+      backgroundImage: {
+        'hero-pattern': "url('/gotham.jpeg')",
+        'footer-texture': "url('/img/footer-texture.png')",
+      }
       // spacing: {
       //   '128': '32rem',
       //   '144': '36rem',
@@ -28,7 +32,7 @@ module.exports = {
     styled: true,
     themes: [
       // first one will be the default theme
-      "black",
+      //"black",
       // uncomment to enable
       // "light (default)",
       // "dark",
