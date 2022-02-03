@@ -111,7 +111,7 @@ export const HomeView: FC = ({}) => {
 
         <section className="bg-black">
           <div className="">
-            <img src="/realms2-1.png" className=""></img>
+            <img loading='lazy' src="/realms2-1.png" className=""></img>
 
           </div>
 
@@ -256,7 +256,7 @@ export const HomeView: FC = ({}) => {
 
 <section className="">
           <div className="">
-            <img src="/realms8.png"></img>
+            <img loading='lazy' src="/realms8.png"></img>
 
           </div>
           </section>
