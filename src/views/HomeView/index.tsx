@@ -112,7 +112,7 @@ export const HomeView: FC = ({}) => {
 
         <section className="bg-black">
           <div className="">
-            <Image loading='lazy' src="/realms2-1.png" className="w-full"></Image>
+            <Image loading='lazy' layout="fill" src="/realms2-1.png" className="w-full"></Image>
 
           </div>
 
