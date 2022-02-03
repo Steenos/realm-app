@@ -8,6 +8,7 @@ import { useWalletNfts, NftTokenAccount } from "@nfteyez/sol-rayz-react";
 import { Loader, SolanaLogo, SelectAndConnectWalletButton } from "components";
 import {BsDiscord, BsTwitter} from "react-icons/bs"
 import Script from 'next/script'
+import Image from 'next/image'
 
 //import { SolanaLogo } from "components";
 
@@ -111,7 +112,7 @@ export const HomeView: FC = ({}) => {
 
         <section className="bg-black">
           <div className="">
-            <img loading='lazy' src="/realms2-1.png" className=""></img>
+            <Image loading='lazy' src="/realms2-1.png" className="w-full"></Image>
 
           </div>
 
@@ -256,7 +257,7 @@ export const HomeView: FC = ({}) => {
 
 <section className="">
           <div className="">
-            <img loading='lazy' src="/realms8.png"></img>
+            <Image loading='lazy' src="/realms8.png" className="w-full"></Image>
 
           </div>
           </section>
