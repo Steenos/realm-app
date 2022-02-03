@@ -7,6 +7,7 @@ import { useConnection } from "@solana/wallet-adapter-react";
 //import { walletToParsePublicKey} from "views/HomeView";
 import { HomeView } from "views";
 import Unity, { UnityContext } from "react-unity-webgl";
+import {BsDiscord, BsTwitter} from "react-icons/bs"
 //import useSWR from "swr";
 import { fetcher } from "utils/fetcher";
 //import { UnityEvent } from "react-unity-webgl";
@@ -136,13 +137,14 @@ export const GalleryView: FC = ({}) => {
     
     
       <div className={styles.container}>
-        <div className="navbar mb-2 shadow-lg bg-neutral text-neutral-content rounded-box">
+        
+        {/* <div className="navbar mb-2 shadow-lg bg-neutral bg-black text-white text-neutral-content rounded-box">
           <div className="flex-none">
             <button className="btn btn-square btn-ghost">
-              <span className="text-4xl"><img src="/newlogo.png"/></span>
+              <span className="text-4xl"></span>
             </button>
           </div>
-          <div className="flex-1 px-2 mx-2">
+          <div className="flex-1 px-2 mx-2 ">
             <div className="text-sm breadcrumbs">
               <ul className="text-xl">
                 <li>
@@ -157,13 +159,44 @@ export const GalleryView: FC = ({}) => {
             </div>
           </div>
           <div className="flex-none">
-           {/*  <WalletMultiButton className="btn btn-ghost" /> */}
+          
           </div>
           
+        </div> */}
+        <div className="fixed  top-0  bg-black bg-opacity-70 backdrop-blur-lg  w-full h-16">
+    <nav className="h-16">
+ 
+  <div className="flex flex-row justify-center md:justify-between max-w-screen-xl px-20 h-16 container mx-auto items-center">
+  <div className="text-4xl  items-center">
+  <a href="/#" className="flex  flex-row">
+  <img src={"/trans-glow-logo.png"} alt="logo" className="hidden w-16 cursor-pointer"/>
+    
+      <span className="font-extrabold whitespace-nowrap text-white ">Art Realms</span>
+  </a>
+  </div>
+ 
+  <div className=" flex w-full md:flex md:w-auto md:order-1 justify-end" id="mobile-menu-4">
+    <ul className="flex flex-row items-center justify-center space-x-4 text-3xl md:flex-row md:space-x-8 md:mt-0 md:text-xlg md:font-medium">
+      <li>
+        <a href="https://discord.gg/a3u8yJdw" className="text-white hover:text-purple-400 text-2xl md:text-5xl"><BsDiscord/></a>
+      </li>
+      <li>
+        <a href="https://twitter.com/_realms_" className="text-white hover:text-blue-500 text-2xl md:text-5xl"><BsTwitter/></a>
+      </li>
+      <li>
+        <div className="hidden flex-none">
+            <WalletMultiButton className="btn btn-ghost" />
         </div>
+      </li>
+      
+    </ul>
+    </div>
+  </div>
+  </nav>
+  </div>
 
        
-        <div className="flex-1 px-6 mx-2">
+        <div className="flex-1 min-h-screen py-16 px-6  bg-black">
           
 
            {publicKey ? <Unity style={{ visibility: isLoaded ? "visible" : "hidden" , width:"100%",height:"100%"}}
@@ -178,14 +211,15 @@ export const GalleryView: FC = ({}) => {
             <label>Please login to your wallet to view your NFT gallery!</label>
           </div>
         </div>} 
-          
+       <div className="hidden">
         {setTimeout(() => {
       {sendNFTData()}
     }, 1000)}    
-          
+          </div>   
             
            
       </div>
+      
        
     </div>
      

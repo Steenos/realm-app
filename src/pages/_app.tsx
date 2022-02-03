@@ -7,6 +7,7 @@ import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 //import Unity, { UnityContext } from "react-unity-webgl";
 
 import "tailwindcss/tailwind.css";
+
 import "../styles/globals.css";
 import "../styles/App.css";
 
@@ -33,7 +34,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <div className="min-h-screen">
-      <div className="bg-gradient-to-br from-gray-700 via-gray-900 to-black h-screen">
+      <div className="bg-gray-100 h-screen">
         <ConnectionProvider endpoint={endpoint}>
           <WalletProvider>
             <Component {...pageProps} />

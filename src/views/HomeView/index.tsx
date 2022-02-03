@@ -6,6 +6,8 @@ import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import { useConnection } from "@solana/wallet-adapter-react";
 import { useWalletNfts, NftTokenAccount } from "@nfteyez/sol-rayz-react";
 import { Loader, SolanaLogo, SelectAndConnectWalletButton } from "components";
+import {BsDiscord, BsTwitter} from "react-icons/bs"
+import Script from 'next/script'
 
 //import { SolanaLogo } from "components";
 
@@ -53,70 +55,154 @@ export const HomeView: FC = ({}) => {
     
     //<div className="container mx-auto max-w-6xl p-8 2xl:px-0">
     <div className={styles.container}>
-       {/*  <header className="fixed flex w-full justify-between items-center"> */}
-     {/*  <nav className="px-2 sm:px-4 py-2.5 rounded "> */}
-  <div className="py-16 h-full">
-  <nav className="fixed p-5 top-0 flex w-full flex-wrap justify-between items-center mx-auto right-0 left-0
-  bg-white  bg-transparent backdrop-filter backdrop-blur-lg">
-  <a href="#" className="flex">
-  <img src={"/trans-glow-logo.png"} alt="logo" className="w-16 cursor-pointer"/>
     
-      <span className="self-center text-5xl font-bold whitespace-nowrap dark:text-white ">Art Realms</span>
+    <div className="fixed  top-0  bg-black bg-opacity-70 backdrop-blur-lg  w-full h-16">
+    <nav className="h-16">
+ 
+  <div className="flex flex-row justify-center md:justify-between max-w-screen-xl px-20 h-16 container mx-auto items-center">
+  <div className="text-4xl  items-center">
+  <a href="#" className="flex  flex-row">
+  <img src={"/trans-glow-logo.png"} alt="logo" className="hidden w-16 cursor-pointer"/>
+    
+      <span className="  font-extrabold whitespace-nowrap text-white ">Art Realms</span>
   </a>
-  {/* <div className="flex md:order-2">
-      <button type="button" className=" hidden text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get started</button>
-      <button data-collapse-toggle="mobile-menu-4" type="button" className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-4" aria-expanded="false">
-      <span className="sr-only">Open main menu</span>
-      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-      <svg className="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-    </button>
-  </div> */}
-  <div className="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="mobile-menu-4">
-    <ul className="hidden flex flex-col text-3xl mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-xlg md:font-medium">
+  </div>
+ 
+  <div className=" flex w-full md:flex md:w-auto md:order-1 justify-end" id="mobile-menu-4">
+    <ul className="flex flex-row items-center justify-center space-x-4 text-3xl md:flex-row md:space-x-8 md:mt-0 md:text-xlg md:font-medium">
       <li>
-        <a href="#" className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">Mission</a>
+        <a href="https://discord.gg/a3u8yJdw" className="text-white hover:text-purple-400 text-2xl md:text-5xl"><BsDiscord/></a>
       </li>
       <li>
-        <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Roadmap</a>
+        <a href="https://twitter.com/_realms_" className="text-white hover:text-blue-500 text-2xl md:text-5xl"><BsTwitter/></a>
       </li>
       <li>
-        <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Team</a>
+        <div className="hidden flex-none">
+            <WalletMultiButton className="btn btn-ghost" />
+        </div>
       </li>
+      
     </ul>
+    </div>
   </div>
   </nav>
   </div>
-{/* </nav> */}
-{/* </header> */}
-        {/* <nav className="w-full flex md:justify-center justify-between items-center p-4">
-          <div className="md:flex-[0.5] flex-initial justify-center items-center ">
-            <img src={"/trans-glow-logo.png"} alt="logo" className="w-32 cursor-pointer"/>
-            <h1>Art Realms</h1>
-          </div>
-          <div className="flex-1 px-2 mx-2">
-          
-          </div>
-        </nav> */}
-       {/*  <div className="hero min-h-fit bg-base-200">
-        
-          <div className="flex-col hero-content lg:flex-row-reverse">
-            <img src="/hero-img.png" className="max-w-lg rounded-lg shadow-2xl"/> 
-              <div>
-          <h1 className="mb-5 text-5xl font-bold">
-          Jump into a 3D gallery to view your <SolanaLogo/> NFTs.
-          </h1> 
-      <p className="mb-5">
-            Just connect your wallet 
-          </p> 
-      <button className="btn btn-primary">Login to the Metaverse!</button>
+ 
+  
+
+
+        <div className="bg-black py-16  lg:px-16 px-10 ">
+          <div className="md:grid md:grid-cols-2 ">
+            
+            <div className=" flex justify-center md:order-last ">
+             
+              <iframe loading="lazy" src='https://my.spline.design/untitled-539f7e39fb49baf014476c8ebcf16f56/' className="lg:h-[600px] lg:w-[500px] h-[400px] w-[300px]" ></iframe> 
+             
+                {/*  <div className="flex-auto flex-row space-x-8 px-8"><img src="/isoview5.png" className="w-full"/></div> */}
+            </div>
+            <div className="md:flex md:flex-col md:space-y-4 text-center md:p-6">
+              <h1 className = "text-5xl md:text-5xl lg:text-7xl xl:text-8xl sm:text-6xl mt-6 ml-6 sm:text-center md:text-left font-extrabold text-transparent bg-clip-text bg-gradient-to-br bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400">Your Space in the Metaverse</h1>
+              <p className="text-base md:text-base lg:text-xl md:text-left ml-6 font-extralight text-white">Create high-quality 3D exhibitions of your NFTs and share them with your friends. Getting started is as easy as searching your Solana wallet address.</p>
+              <a href="#demo" className=" md:bg-black md:border md:border-white md:hover:bg-white md:hover:text-black md:ml-6 md:text-white md:items-center md:font-bold md:py-2 md:px-4 md:rounded-full md:w-32">Try Demo</a>
             </div>
           </div>
-        </div> */}
+          
+        </div>
 
-        <div className="flex w-full py-8">
-          <div className="flex md:flex-row flex-col">
-          <div className="flex-auto flex-row space-x-8 px-8"><img src="/isoview5.png" className="w-full"/></div>
-            <div className="flex flex-auto flex-col md:mr-10">
+        <section className="bg-black">
+          <div className="">
+            <img src="/realms2-1.png" className=""></img>
+
+          </div>
+
+
+        </section>
+        <section  id='demo'>
+        <div className="bg-black p-10 text-center">
+          <h1 className="text-5xl md:text-5xl md:ml-6 lg:text-7xl xl:text-8xl sm:text-6xl mt-6 ml-6 sm:text-center md:text-left font-extrabold text-transparent bg-clip-text bg-gradient-to-br bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400">Turn your Wallet into an Art Gallery</h1>
+          <p className="text-base md:text-base md:ml-6 lg:text-xl md:text-left ml-6 font-extralight text-white">Experience Art Realms by turning any Solana NFT wallet into a gallery. This is our first realm, and is free for anyone to use. Your wallet address is public and allows us to display your NFTs but doesn't give us access to your wallet.</p>
+          <div>
+            <form action="" className="md:w-1/2 mx-auto">
+              <div className="">
+                <label htmlFor="">wallet address
+                <input type="text"
+                        placeholder="Enter a public wallet adress..."
+                        className="w-full md:w-full p-2  input text-gray-400 rounded-lg border border-gray-300 input-lg bg-gray-800 bg-opacity-40"
+                        value={walletToParsePublicKey}
+                        onChange={onChange}
+                        style={{ }}
+                  />
+
+{!error ? <button className="bg-black text-white font-bold "><Link href={{
+        pathname: "/gallery",
+        query: {walletToParsePublicKey},
+      }}>
+                  <a className="text-md font-light text-transparent bg-clip-text bg-gradient-to-br bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400">
+                    Enter Art Realms 
+                  </a>
+                </Link></button>: <button className="select-none">
+                  <a className="select-none text-md font-light text-gray-400">
+                    Enter Art Realms 
+                  </a></button>}
+
+                </label>
+               
+              </div>
+              {/* <button className="text-white">Submit</button> */}
+            
+            </form>
+          </div>
+          {/* <div className="md:flex md:flex-row border-2">
+                      <label className=" md:flex ">
+                      
+                        <div className="flex m-2 space-x-2 ">
+                          <input
+                            type="text"
+                            placeholder="Enter a public wallet adress..."
+                            className="w-full md:w-full input text-gray-400 rounded-lg border border-gray-300 input-lg bg-gray-800 bg-opacity-40"
+                            value={walletToParsePublicKey}
+                            onChange={onChange}
+                            style={{
+                              
+                            }}
+                          />
+
+                          
+                        </div>
+                        {!error ? <button className="bg-black border border-white hover:bg-white ml-6 text-white font-bold py-2 px-4 rounded-full "><Link href={{
+        pathname: "/gallery",
+        query: {walletToParsePublicKey},
+      }}>
+                  <a className="text-md font-bold text-white hover:text-black">
+                    Enter the Metaverse
+                  </a>
+                </Link></button>: <button className="btn btn-ghost">
+                  <a className=" hidden ">
+                    Enter valid address
+                  </a></button>}
+                      </label>
+                    </div> */}
+        </div>
+        </section>
+
+       {/*  <div id="demo" className="bg-gray-200 md:flex flex-row  h-screen py-3 ">
+          
+          <div className="border-2 flex flex-col w-1/2 bg-white md:justify-center lg:px-16 md:px-6">
+            <h1 className = "md:text-7xl lg:text-8xl sm:text-6xl mt-6 ml-6 sm:text-center md:text-left font-extrabold text-transparent bg-clip-text bg-gradient-to-br bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400">Your Space in the Metaverse</h1>
+            <p className="text-xl sm:text-md  text-black font-bold">Create high-quality 3D exhibitions of your NFTs and share it with your friends. Getting started is as easy as searching your Solana wallet address.</p>
+            
+          </div>
+          <div className=" flex flex-row w-1/2 ">
+            
+            <iframe src='https://my.spline.design/untitled-539f7e39fb49baf014476c8ebcf16f56/' width="100%" height="100%"></iframe>
+         
+          
+
+          </div>
+          
+        </div> */}
+        
+            {/* <div className="flex flex-auto flex-col md:mr-10">
               <h1 className = "text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-white to-blue-400">Make your Own NFT Gallery</h1>
               <p className="text-white">Create high-quality 3D exhibitions of your NFTs and share it with your friends. Getting started is as easy as searching your Solana wallet address.</p>
               <div className="form-control mt-8">
@@ -149,22 +235,39 @@ export const HomeView: FC = ({}) => {
                   </a></button>}
                       </label>
                     </div>
-            </div>
+            </div> */}
            
-          </div>
+          
+      {/* <section className="bg-gray-500 relative ">
+        <div className=" flex flex-col items-center mx-8 w-full">
+        
+            
+              <div className="flex flex-col justify-center md:justify-start max-w-xl ">
+                <h1 className="text-white font-bold text-5xl md:text-6xl lg:text-7xl text-left md:text-left">Building Beautiful Metaverse Spaces</h1>
+                <h2 className="text-black font-bold">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo quas molestiae similique beatae temporibus laudantium et consequuntur maiores tempore? Laboriosam neque atque in velit eos provident tempore quae, quas perspiciatis?</h2>
+              </div>
+
+              
+
+            
         </div>
+        </section>
+ */}
 
+<section className="">
+          <div className="">
+            <img src="/realms8.png"></img>
 
+          </div>
+          </section>
 
   
 
-       <footer className="p-10 h-fit footer bg-neutral justify-left text-neutral-content text-gray-200">
+       <footer className="p-10 h-fit footer bg-black text-neutral-content text-sm text-gray-200">
   <div>
     
-    <p>Built by @0xSteen and @crazysetting
-      
-    </p>
-    <p>twitter.com/_realms_</p>
+    <p className="">Built by @0xSteen and @crazysetting</p>
+    
   </div> 
   
 </footer> 

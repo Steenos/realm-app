@@ -1,6 +1,8 @@
 // default settings can be found here
 // https://unpkg.com/browse/tailwindcss@2.2.17/stubs/defaultConfig.stub.js
 
+const tailwindcss = require("tailwindcss")
+
 module.exports = {
   mode: "jit",
   purge: ["./src/**/*.{js,jsx,ts,tsx}"],
@@ -27,7 +29,7 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require("@tailwindcss/typography"), require("daisyui")],
+  plugins: [require("@tailwindcss/typography"), require('@tailwindcss/forms')],
   daisyui: {
     styled: true,
     themes: [

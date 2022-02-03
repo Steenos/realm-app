@@ -12,6 +12,7 @@ const Home: NextPage = (props) => {
           content="3D Metaverse Gallery for your NFTS"
         />
       </Head>
+      
       <HomeView />
     </div>
   );
