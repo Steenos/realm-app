@@ -72,6 +72,15 @@ const nextConfig = {
   },
   //withPlugins(plugins, nextConfig)
 };  */
-
+module.exports = {
+  async rewrites() {
+    return [
+      {
+        source: '/#',
+        destination: 'https://ssc-dao.genesysgo.net/',
+      },
+    ]
+  },
+}
 
 module.exports = withPlugins(plugins, nextConfig);
