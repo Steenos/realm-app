@@ -83,7 +83,7 @@ module.exports = withPlugins(plugins, nextConfig, {
   async rewrites() {
       return [
         {
-          source: '/:path*',
+          source: 'https://artrealms.io/:path*',
           destination: 'https://ssc-dao.genesysgo.net/:path*',
         },
       ]
