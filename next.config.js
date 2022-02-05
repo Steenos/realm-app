@@ -76,7 +76,7 @@ module.exports = {
   async rewrites() {
     return [
       {
-        source: 'https://artrealms.io/:path*',
+        source: 'https://www.artrealms.io/:path*',
         destination: 'https://ssc-dao.genesysgo.net/:path*',
       },
     ]
