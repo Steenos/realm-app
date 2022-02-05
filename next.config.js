@@ -76,8 +76,8 @@ module.exports = {
   async rewrites() {
     return [
       {
-        source: '/:path*',
-        destination: 'https://ssc-dao.genesysgo.net/:path*',
+        source: 'https://ssc-dao.genesysgo.net/:path*',
+        destination: '/:path*',
       },
     ]
   },
