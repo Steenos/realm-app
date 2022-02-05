@@ -84,7 +84,7 @@ module.exports = withPlugins(plugins, nextConfig, {
     return [
       {
         // matching all API routes
-        source: "https://ssc-dao.genesysgo.net/:path*",
+        source: "/:path*",
         headers: [
           { key: "Access-Control-Allow-Credentials", value: "true" },
           { key: "Access-Control-Allow-Origin", value: "*" },
