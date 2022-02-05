@@ -92,4 +92,12 @@ module.exports = withPlugins(plugins, nextConfig, {
         ]
       }
     ]
-  }});
+  }}, {async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'https://ssc-dao.genesysgo.net/',
+      },
+    ]
+  }
+});
