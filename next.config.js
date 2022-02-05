@@ -72,19 +72,14 @@ const nextConfig = {
   },
   //withPlugins(plugins, nextConfig)
 };  */
-module.exports = {
-  async rewrites() {
-    return [
-      {
-        source: '/:path*',
-        destination: 'https://ssc-dao.genesysgo.net/:path*',
-      },
-    ]
-  },
-}
+
+
 
 // next.config.js
-module.exports = {
+
+
+
+module.exports = withPlugins(plugins, nextConfig, {
   async headers() {
     return [
       {
@@ -99,7 +94,4 @@ module.exports = {
       }
     ]
   }
-};
-
-
-module.exports = withPlugins(plugins, nextConfig);
+});
