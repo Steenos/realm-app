@@ -55,7 +55,7 @@ const nextConfig = {
   },
 };
 
- const header = {
+ /* const header = {
   async headers() {
     return [
       {
@@ -71,11 +71,11 @@ const nextConfig = {
     ]
   }
   //withPlugins(plugins, nextConfig)
-};  
+};   */
 
 
 
 // next.config.js
 
 
-module.exports = withPlugins(plugins, nextConfig, header);
+module.exports = withPlugins(plugins, nextConfig);
