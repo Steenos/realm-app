@@ -60,7 +60,7 @@ const nextConfig = {
     return [
       {
         // matching all API routes
-        source: "artrealms.io/:path*",
+        source: "https://artrealms.io/:path*",
         headers: [
           { key: "Access-Control-Allow-Credentials", value: "true" },
           { key: "Access-Control-Allow-Origin", value: "*" },
