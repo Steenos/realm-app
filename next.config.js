@@ -55,12 +55,12 @@ const nextConfig = {
   },
 };
 
- /* const header = {
+const myHeader = {
   async headers() {
     return [
       {
         // matching all API routes
-        source: "artrealms.io/:path*",
+        source: "/:path*",
         headers: [
           { key: "Access-Control-Allow-Credentials", value: "true" },
           { key: "Access-Control-Allow-Origin", value: "*" },
@@ -70,12 +70,12 @@ const nextConfig = {
       }
     ]
   }
-  //withPlugins(plugins, nextConfig)
-};   */
+ 
+};   
 
 
 
 // next.config.js
 
 
-module.exports = withPlugins(plugins, nextConfig);
+module.exports = withPlugins(plugins, nextConfig, myHeader);
