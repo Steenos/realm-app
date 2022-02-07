@@ -7,8 +7,8 @@ class MyDocument extends Document {
         <Head>
           <meta
             name="description"
-            Access-Control-Allow-Origin = "*"
-            content="This site will fly high 🦤"
+            http-equiv="Content-Security-Policy" content="*"
+            content="Art Realms"
           />
           <link rel="icon" href="/favicon.ico" />
 
