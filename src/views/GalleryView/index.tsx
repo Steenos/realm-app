@@ -34,16 +34,18 @@ const unityContext = new UnityContext({
 
 //const walletPublicKey = "";
 
-const { connection } = useConnection();
+
   
+  
+
+export const GalleryView: FC = ({}) => {
+  
+  const { connection } = useConnection();
+
   const router = useRouter()
   const {
     query : {myValue},
   } = router
-  
-export const GalleryView: FC = ({}) => {
-  
-
   
   // const { connection } = useConnection();
   //const [walletToParsePublicKey, setWalletToParsePublicKey] =

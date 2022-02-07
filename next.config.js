@@ -43,6 +43,7 @@ const plugins = [
 const nextConfig = {
   distDir: "build",
   swcMinify: true,
+  crossOrigin: 'anonymous',
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.fallback.fs = false;
