@@ -10,7 +10,7 @@ class MyDocument extends Document {
             content="Art Realms"
           />
 
-          <meta httpEquiv="Content-Security-Policy" content="default-src 'self'" />
+          <meta httpEquiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'" />
           {/* <link rel="icon" href="/favicon.ico" /> */}
 
           <link
