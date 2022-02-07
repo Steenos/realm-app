@@ -68,7 +68,7 @@ module.exports = withPlugins(plugins, nextConfig, {  async headers() {
   return [
     {
       // matching all API routes
-      source: "https://artrealms.io/",
+      source: "/.*",
       headers: [
         { key: "Access-Control-Allow-Credentials", value: "true" },
         { key: "Access-Control-Allow-Origin", value: "*" },
