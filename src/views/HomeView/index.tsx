@@ -16,24 +16,21 @@ import styles from "./index.module.css";
 
 
 
-
+const walletPublicKey = "";
 
 export const HomeView: FC = ({}) => {
 
   const { connection } = useConnection();
-  const walletPublicKey = "";
   
-
-  //const onClick = () => {};
    const [walletToParsePublicKey, setWalletToParsePublicKey] =
     useState<string>(walletPublicKey); 
   
-  //const { walletPublicKey } = useWallet();
+  //const { publicKey } = useWallet();
 
 
   const { nfts, isLoading, error } = useWalletNfts({
-    publicAddress: walletToParsePublicKey, connection
-    // connection,
+    publicAddress: walletToParsePublicKey, 
+    connection,
   }); 
 
   //console.log("nfts", nfts);
