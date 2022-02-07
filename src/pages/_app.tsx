@@ -19,7 +19,7 @@ import "../styles/App.css";
 // set custom RPC server endpoint for the final website
 
 //const endpoint = "https://explorer-api.devnet.solana.com";
-//const endpoint = "https://ssc-dao.genesysgo.net/";
+const endpoint = "https://ssc-dao.genesysgo.net";
 
 const WalletProvider = dynamic(
   () => import("../contexts/ClientWalletProvider"),
@@ -30,7 +30,7 @@ const WalletProvider = dynamic(
 
 function MyApp({ Component, pageProps }: AppProps) {
   //const endpoint = useMemo(() => clusterApiUrl(rpc), []);
-  const endpoint = "https://ssc-dao.genesysgo.net/";
+  //const endpoint = "https://ssc-dao.genesysgo.net/";
 
   return (
     <div className="min-h-screen">
