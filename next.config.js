@@ -64,11 +64,11 @@ const nextConfig = {
 // next.config.js
 
 
-module.exports = withPlugins(plugins, nextConfig, {  async headers() {
+module.exports = withPlugins(plugins, nextConfig,   {async headers() {
   return [
     {
       // matching all API routes
-      source: "/.*",
+      source: "artrealms.io",
       headers: [
         { key: "Access-Control-Allow-Credentials", value: "true" },
         { key: "Access-Control-Allow-Origin", value: "*" },
