@@ -7,10 +7,11 @@ class MyDocument extends Document {
         <Head>
           <meta
             name="description"
-            httpEquiv="Content-Security-Policy" content="*"
             content="Art Realms"
           />
-          <link rel="icon" href="/favicon.ico" />
+
+          <meta httpEquiv="Content-Security-Policy" content="*" />
+          {/* <link rel="icon" href="/favicon.ico" /> */}
 
           <link
             rel="apple-touch-icon"
