@@ -30,7 +30,7 @@ const WalletProvider = dynamic(
 
 function MyApp({ Component, pageProps }: AppProps) {
   //const endpoint = useMemo(() => clusterApiUrl(rpc), []);
-  const endpoint = "https://ssc-dao.genesysgo.net/";
+  const endpoint = "ssc-dao.genesysgo.net";
 
   return (
     <div className="min-h-screen">
