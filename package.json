@@ -2,6 +2,7 @@
   "name": "create-dapp-solana-nextjs",
   "version": "1.0.0",
   "private": true,
+  "proxy": "https://localhost:8080/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
