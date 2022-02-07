@@ -7,7 +7,7 @@ class MyDocument extends Document {
         <Head>
           <meta
             name="description"
-            http-equiv="Content-Security-Policy" content="*"
+            httpequiv="Content-Security-Policy" content="*"
             content="Art Realms"
           />
           <link rel="icon" href="/favicon.ico" />
