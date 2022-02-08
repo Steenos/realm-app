@@ -41,11 +41,11 @@ const unityContext = new UnityContext({
 export const GalleryView: FC = ({}) => {
   
   const { connection } = useConnection();
-
+/* 
   const router = useRouter()
   const {
     query : {myValue},
-  } = router
+  } = router */
   
   // const { connection } = useConnection();
   //const [walletToParsePublicKey, setWalletToParsePublicKey] =
@@ -57,9 +57,9 @@ export const GalleryView: FC = ({}) => {
    
 
   //const { walletToParsePublicKey } = useWallet();
-    console.log("wallet address: ", router.query);
+    //console.log("wallet address: ", router.query);
    const { nfts, isLoading, error } = useWalletNfts({
-    publicAddress: router.query.walletToParsePublicKey, connection
+    publicAddress: "BBcnpuGSbDbMhZHugVRhURmfdFWkieXskLyHvqcFMsbT", connection
   }); 
 
   //console.log("nfts", nfts);

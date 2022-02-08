@@ -9,6 +9,7 @@ import { Loader, SolanaLogo, SelectAndConnectWalletButton } from "components";
 import {BsDiscord, BsTwitter} from "react-icons/bs"
 import Script from 'next/script'
 import Image from 'next/image'
+import { fetcher } from "utils/fetcher";
 
 //import { SolanaLogo } from "components";
 
@@ -38,7 +39,7 @@ export const HomeView: FC = ({}) => {
    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const {value} = e.target;
     
-    setWalletToParsePublicKey(value.trim());
+   setWalletToParsePublicKey(value.trim());
     //console.log(walletToParsePublicKey);
   };
 
