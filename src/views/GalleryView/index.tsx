@@ -41,11 +41,11 @@ const unityContext = new UnityContext({
 export const GalleryView: FC = ({}) => {
   
   const { connection } = useConnection();
-/* 
+
   const router = useRouter()
   const {
     query : {myValue},
-  } = router */
+  } = router
   
   // const { connection } = useConnection();
   //const [walletToParsePublicKey, setWalletToParsePublicKey] =
@@ -57,9 +57,9 @@ export const GalleryView: FC = ({}) => {
    
 
   //const { walletToParsePublicKey } = useWallet();
-    //console.log("wallet address: ", router.query);
+    console.log("wallet address: ", router.query);
    const { nfts, isLoading, error } = useWalletNfts({
-    publicAddress: "BBcnpuGSbDbMhZHugVRhURmfdFWkieXskLyHvqcFMsbT", connection
+    publicAddress: router.query.walletToParsePublicKey, connection
   }); 
 
   //console.log("nfts", nfts);
@@ -94,13 +94,13 @@ export const GalleryView: FC = ({}) => {
   //Button to send NFT uri to Unity
   const sendNFTData=()=> {
     
-    for (var x in nfts){
+    for (var x=1;x<15;x++){
       var myUri = nfts[x].data.uri;
     
     //console.log("myUri: ",myUri);
     
     //sends uri data to populate list in Unity
-    unityContext.send("NftCanvasObject", "addNftToList", myUri);
+      unityContext.send("NftCanvasObject", "addNftToList", myUri);
     
     }
     

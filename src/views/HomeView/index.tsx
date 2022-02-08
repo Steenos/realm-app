@@ -73,7 +73,7 @@ export const HomeView: FC = ({}) => {
         <a href="https://discord.gg/a3u8yJdw" className="text-white hover:text-purple-400 text-2xl md:text-5xl"><BsDiscord/></a>
       </li>
       <li>
-        <a href="https://twitter.com/_realms_" className="text-white hover:text-blue-500 text-2xl md:text-5xl"><BsTwitter/></a>
+        <a href="https://twitter.com/art_realms" className="text-white hover:text-blue-500 text-2xl md:text-5xl"><BsTwitter/></a>
       </li>
       <li>
         <div className="hidden flex-none">
