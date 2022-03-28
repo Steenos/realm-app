@@ -99,7 +99,7 @@ export const HomeView: FC = ({}) => {
                 {/*  <div className="flex-auto flex-row space-x-8 px-8"><img src="/isoview5.png" className="w-full"/></div> */}
             </div>
             <div className="md:flex md:flex-col md:space-y-4 mt-20 text-center md:p-6 z-40">
-              <h1 className = "text-5xl md:text-5xl lg:text-7xl xl:text-8xl sm:text-6xl mt-6 ml-6 sm:text-center md:text-left font-extrabold text-transparent bg-clip-text bg-gradient-to-br bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400">A Home for your NFTs</h1>
+              <h1 className = "text-5xl md:text-5xl lg:text-7xl xl:text-8xl sm:text-6xl mt-6 ml-6 sm:text-center md:text-left font-extrabold text-transparent bg-clip-text bg-gradient-to-br bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400">Your Web3 Art Gallery</h1>
               <p className="text-base md:text-base lg:text-xl md:text-left ml-6 font-extralight text-white">Create high-quality 3D exhibitions of your NFTs and share them with your friends. Getting started is as easy as searching your Solana wallet address.</p>
               <a href="#demo" className=" md:bg-black md:border md:border-white md:hover:bg-white md:hover:text-black md:ml-6 md:text-white md:items-center md:font-bold md:py-2 md:px-4 md:rounded-full md:w-32">Try Demo</a>
             </div>
