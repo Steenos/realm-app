@@ -36,7 +36,7 @@ const plugins = [
     {
       webpack5: true,
       reactStrictMode: true,
-      crossOrigin: 'anonymous',
+    
     },
   ],
 ];

@@ -94,8 +94,16 @@ export const GalleryView: FC = ({}) => {
   //Button to send NFT uri to Unity
   const sendNFTData=()=> {
     
-    for (var x=1;x<15;x++){
-      var myUri = nfts[x].data.uri;
+    for (var x=2; x<17; x++){
+      if (!nfts.hasOwnProperty(x)) {
+        //The current property is not a direct property of p
+        continue;
+    }
+        //console.log("first in array: ", nfts[0].data.uri);
+        //console.log("second in array: ", nfts[1].data.uri)
+        var myUri = nfts[x].data.uri;
+        
+      
     
     //console.log("myUri: ",myUri);
     
@@ -217,7 +225,7 @@ export const GalleryView: FC = ({}) => {
        <div className="hidden">
         {setTimeout(() => {
       {sendNFTData()}
-    }, 1000)}    
+    }, 2000)}    
           </div>   
             
            

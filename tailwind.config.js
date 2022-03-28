@@ -29,9 +29,9 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require("@tailwindcss/typography"), require('@tailwindcss/forms')],
+  plugins: [require("@tailwindcss/typography"), require('@tailwindcss/forms'), require('@tailwindcss/aspect-ratio')],
   daisyui: {
-    styled: true,
+    styled: false,
     themes: [
       // first one will be the default theme
       //"black",

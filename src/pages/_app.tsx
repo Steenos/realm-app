@@ -33,7 +33,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <div className="min-h-screen">
-      <div className="bg-gray-100 h-screen">
+      <div className="bg-black h-full">
         <ConnectionProvider endpoint={endpoint}>
           <WalletProvider>
             <Component {...pageProps} />

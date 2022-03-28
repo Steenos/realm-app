@@ -20,6 +20,7 @@
     "@solana/wallet-adapter-solflare": "^0.4.0",
     "@solana/wallet-adapter-sollet": "^0.8.0",
     "@solana/wallet-adapter-wallets": "^0.11.3",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.4.0",
     "@tailwindcss/typography": "^0.4.1",
     "daisyui": "^1.16.2",
