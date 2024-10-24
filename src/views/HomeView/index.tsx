@@ -272,7 +272,7 @@ export const HomeView: FC = ({}) => {
        <footer className="container mx-auto p-10 h-fit footer bg-black text-neutral-content text-sm text-gray-200">
   <div>
     
-    <p className="">Built by @0xSteen and @crazysetting</p>
+    
     
   </div> 
   
